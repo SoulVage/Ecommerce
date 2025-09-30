@@ -10,7 +10,8 @@ window.addEventListener("DOMContentLoaded", async () => {
       await userUi(userData);
   }
   
-
+  productsInit("product-segment", data, "", 13, {
+  });
   productsInit("swiper-1", data, "",6, {
     name: ".mySwiper1",
     page: ".swiper-pagination1",
