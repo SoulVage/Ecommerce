@@ -11,9 +11,6 @@ window.addEventListener("DOMContentLoaded", async () => {
   if (userData) {
     await userUi(userData);
   }
-  if (loader) {
-    loader.remove();
-  }
   productsInit("product-segment", data, "", 13, {});
   productsInit("swiper-1", data, "", 6, {
     name: ".mySwiper1",
