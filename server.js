@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
+const { v4: uuidv4 } = require('uuid'); // برای ساختن id یکتا
 
 const app = express();
 
@@ -17,26 +18,93 @@ app.use(express.json());
 app.use(cookieParser());
 
 const JWT_SECRET = process.env.JWT_SECRET || 'change_this_secret';
-const JWT_EXPIRES_IN = '1h'; // توکن اصلی 1 ساعت معتبره
-const USERS_FILE = path.join(__dirname, 'data', 'user.json'); // ../data/user.json
+const JWT_EXPIRES_IN = '1h';
+const USERS_FILE = path.join(__dirname, 'data', 'user.json');
 
-// ساده ولی کارا: rate limit برای endpoint حسّاس
+// rate limit
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 20, // حداکثر 20 درخواست در بازه
+  windowMs: 15 * 60 * 1000,
+  max: 20,
   message: { message: 'Too many requests, try again later' }
 });
 
-// helper: خواندن کاربران از فایل (هر بار می‌خونه تا تغییرات سریع اعمال شه)
+// helper: خواندن کاربران از فایل
 async function readUsers() {
-  const raw = await fs.readFile(USERS_FILE, 'utf8');
-  return JSON.parse(raw);
+  try {
+    const raw = await fs.readFile(USERS_FILE, 'utf8');
+    return JSON.parse(raw);
+  } catch (err) {
+    if (err.code === 'ENOENT') return []; // اگر فایل وجود نداشت
+    throw err;
+  }
 }
 
-// helper: ارسال پاسخ عمومی برای خطاهای لاگین (جلوگیری از user enumeration)
+// helper: نوشتن کاربران در فایل
+async function writeUsers(users) {
+  await fs.writeFile(USERS_FILE, JSON.stringify(users, null, 2), 'utf8');
+}
+
+// helper: پاسخ خطای ورود
 function invalidCredentials(res) {
   return res.status(401).json({ message: 'Invalid credentials' });
 }
+
+// ========== API ها ==========
+
+// POST /api/register
+app.post('/api/register', async (req, res) => {
+  try {
+    const { email, username, password } = req.body;
+    if (!email || !username || !password) {
+      return res.status(400).json({ message: 'Missing fields' });
+    }
+
+    const users = await readUsers();
+    const existing = users.find(
+      u => String(u.email).toLowerCase() === String(email).toLowerCase()
+    );
+    if (existing) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
+
+    const newUser = {
+      id: uuidv4(),
+      email: email.toLowerCase(),
+      username,
+      password, // ⚠️ در حالت واقعی باید هش بشه
+      role: 'user',
+      createdAt: new Date().toISOString()
+    };
+
+    users.push(newUser);
+    await writeUsers(users);
+
+    return res.status(201).json({
+      message: 'User registered',
+      user: { id: newUser.id, email: newUser.email, username: newUser.username }
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// GET /api/users (لیست همه کاربرها بدون پسورد)
+app.get('/api/users', async (req, res) => {
+  try {
+    const users = await readUsers();
+    const safeUsers = users.map(u => ({
+      id: u.id,
+      email: u.email,
+      username: u.username,
+      role: u.role
+    }));
+    return res.json(safeUsers);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ message: 'Server error' });
+  }
+});
 
 // POST /api/login
 app.post('/api/login', authLimiter, async (req, res) => {
@@ -50,33 +118,19 @@ app.post('/api/login', authLimiter, async (req, res) => {
     const user = users.find(u => String(u.email || '').toLowerCase() === email);
 
     if (!user) return invalidCredentials(res);
-
-    // **توجه**: چون user.json پسورد رو به‌صورت plain داره، اینجا مستقیم مقایسه می‌کنیم.
-    // در عمل: بهتره password_hash ذخیره کنی و از bcrypt.compare استفاده کنی.
     if (user.password !== password) return invalidCredentials(res);
 
-    // payload کوچک و مفید
     const payload = { sub: user.id, email: user.email };
-
     const token = jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
 
-    // ست کردن کوکی امن
     res.cookie('token', token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', // در prod باید true باشه (HTTPS)
+      secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
-      maxAge: 1000 * 60 * 60 // 1 ساعت مطابق با expiresIn
+      maxAge: 1000 * 60 * 60
     });
 
-    // برمی‌گردونیم اطلاعاتی که نیاز به نمایش در فرانت داره (بدون پسورد)
-    const safeUser = {
-      id: user.id,
-      username: user.username,
-      email: user.email,
-      phone: user.phone,
-      role: user.role
-    };
-
+    const safeUser = { id: user.id, username: user.username, email: user.email, role: user.role };
     return res.json({ message: 'Authenticated', user: safeUser });
   } catch (err) {
     console.error(err);
@@ -84,7 +138,7 @@ app.post('/api/login', authLimiter, async (req, res) => {
   }
 });
 
-// GET /api/me -> چک می‌کنه کوکی JWT رو و اطلاعات کاربر رو می‌فرسته
+// GET /api/me
 app.get('/api/me', async (req, res) => {
   try {
     const token = req.cookies.token;
@@ -101,14 +155,7 @@ app.get('/api/me', async (req, res) => {
     const user = users.find(u => u.id === payload.sub);
     if (!user) return res.status(401).json({ message: 'Invalid token user' });
 
-    const safeUser = {
-      id: user.id,
-      username: user.username,
-      email: user.email,
-      phone: user.phone,
-      role: user.role
-    };
-
+    const safeUser = { id: user.id, username: user.username, email: user.email, role: user.role };
     return res.json({ user: safeUser });
   } catch (err) {
     console.error(err);
@@ -116,7 +163,7 @@ app.get('/api/me', async (req, res) => {
   }
 });
 
-// POST /api/logout -> پاک کردن کوکی
+// POST /api/logout
 app.post('/api/logout', (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
@@ -126,7 +173,7 @@ app.post('/api/logout', (req, res) => {
   res.json({ message: 'Logged out' });
 });
 
-// پورت رو انتخاب کن
+// ========== Start Server ==========
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Auth server listening on http://localhost:${PORT}`);

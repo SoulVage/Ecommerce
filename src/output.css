@@ -220,9 +220,6 @@
   .top-2 {
     top: calc(var(--spacing) * 2);
   }
-  .top-2\/5 {
-    top: calc(2/5 * 100%);
-  }
   .left-1 {
     left: calc(var(--spacing) * 1);
   }
@@ -550,24 +547,6 @@
   .border-amber-300 {
     border-color: var(--color-amber-300);
   }
-  .border-amber-300\/20 {
-    border-color: color-mix(in srgb, oklch(87.9% 0.169 91.605) 20%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-amber-300) 20%, transparent);
-    }
-  }
-  .border-amber-300\/60 {
-    border-color: color-mix(in srgb, oklch(87.9% 0.169 91.605) 60%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-amber-300) 60%, transparent);
-    }
-  }
-  .border-amber-300\/90 {
-    border-color: color-mix(in srgb, oklch(87.9% 0.169 91.605) 90%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-amber-300) 90%, transparent);
-    }
-  }
   .border-black {
     border-color: var(--color-black);
   }
@@ -589,32 +568,11 @@
       border-color: color-mix(in oklab, var(--color-black) 20%, transparent);
     }
   }
-  .border-black\/40 {
-    border-color: color-mix(in srgb, #000 40%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-black) 40%, transparent);
-    }
-  }
-  .bg-\[\(\'https\:\/\/img\.freepik\.com\/free-vector\/abstract-grungy-rough-texture-background-with-brush-stroke-effect_1017-51202\.jpg\?semt\=ais_hybrid\&w\=740\&q\=80\'\)\] {
-    background-color: ('https://img.freepik.com/free-vector/abstract-grungy-rough-texture-background-with-brush-stroke-effect 1017-51202.jpg?semt=ais hybrid&w=740&q=80');
-  }
-  .bg-\[\(https\:\/\/img\.freepik\.com\/free-vector\/abstract-grungy-rough-texture-background-with-brush-stroke-effect_1017-51202\.jpg\?semt\=ais_hybrid\&w\=740\&q\=80\)\] {
-    background-color: (https://img.freepik.com/free-vector/abstract-grungy-rough-texture-background-with-brush-stroke-effect 1017-51202.jpg?semt=ais hybrid&w=740&q=80);
-  }
-  .bg-\[https\:\/\/img\.freepik\.com\/free-vector\/black-yellow-grunge-background_1409-1587\.jpg\] {
-    background-color: //img.freepik.com/free-vector/black-yellow-grunge-background 1409-1587.jpg;
-  }
   .bg-amber-100 {
     background-color: var(--color-amber-100);
   }
   .bg-amber-300 {
     background-color: var(--color-amber-300);
-  }
-  .bg-amber-300\/20 {
-    background-color: color-mix(in srgb, oklch(87.9% 0.169 91.605) 20%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-amber-300) 20%, transparent);
-    }
   }
   .bg-amber-500 {
     background-color: var(--color-amber-500);
@@ -642,21 +600,6 @@
   }
   .bg-\[url\(\'\.\/assets\/bg\.png\'\)\] {
     background-image: url('./assets/bg.png');
-  }
-  .bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/abstract-grungy-rough-texture-background-with-brush-stroke-effect_1017-51202\.jpg\?semt\=ais_hybrid\&w\=740\&q\=80\'\)\] {
-    background-image: url('https://img.freepik.com/free-vector/abstract-grungy-rough-texture-background-with-brush-stroke-effect_1017-51202.jpg?semt=ais_hybrid&w=740&q=80');
-  }
-  .bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/black-yellow-grunge-background_1409-1587\.jpg\'\)\] {
-    background-image: url('https://img.freepik.com/free-vector/black-yellow-grunge-background_1409-1587.jpg');
-  }
-  .bg-\[url\(\\\"https\:\/\/img\.freepik\.com\/free-vector\/black-yellow-grunge-background_1409-1587\.jpg\\\"\)\] {
-    background-image: url(\"https://img.freepik.com/free-vector/black-yellow-grunge-background_1409-1587.jpg\");
-  }
-  .bg-\[url\(https\:\/\/i\.pinimg\.com\/1200x\/05\/94\/ab\/0594ab55baf44835f449a5a530b068c3\.jpg\)\] {
-    background-image: url(https://i.pinimg.com/1200x/05/94/ab/0594ab55baf44835f449a5a530b068c3.jpg);
-  }
-  .bg-\[url\(https\:\/\/img\.freepik\.com\/free-vector\/black-yellow-grunge-background_1409-1587\.jpg\)\] {
-    background-image: url(https://img.freepik.com/free-vector/black-yellow-grunge-background_1409-1587.jpg);
   }
   .bg-cover {
     background-size: cover;
@@ -795,12 +738,6 @@
     color: color-mix(in srgb, #000 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-black) 50%, transparent);
-    }
-  }
-  .text-black\/60 {
-    color: color-mix(in srgb, #000 60%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-black) 60%, transparent);
     }
   }
   .text-black\/70 {

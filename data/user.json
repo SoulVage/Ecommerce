@@ -1,10 +1,17 @@
 [
-    {
-        "id": 1,
-        "username": "SoulVage",
-        "password": "2691143465a",
-        "email": "amirazarbahram1234@gmail.com",
-        "phone": "+9809028240881",
-        "role": 0
-    }
+  {
+    "id": 1,
+    "username": "SoulVage",
+    "password": "2691143465a",
+    "email": "amirazarbahram1234@gmail.com",
+    "role": 0
+  },
+  {
+    "id": "e5f42909-fb6d-42cd-ac8f-3e3cf70507dd",
+    "email": "amirazar87@gmail.com",
+    "username": "a",
+    "password": "234",
+    "role": "user",
+    "createdAt": "2025-09-30T13:05:48.825Z"
+  }
 ]
