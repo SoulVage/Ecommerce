@@ -7,9 +7,9 @@ export function createProductCard(product) {
       : "";
       if (product) {
         return `
-    <a href="#" class="swiper-slide" title="${product.title}">
+    <a href="#" class="swiper-slide" data-aos="zoom-in-up" title="${product.title}">
       <div class="w-full max-w-90 rounded-xl flex flex-col items-center justify-between p-4 gap-5 hover:bg-black/2">
-        <img class="w-[160px] h-[160px] object-cover" src="${product.img}" alt="${product.title}" />
+        <img loading="lazy" class="w-[160px] h-[160px] object-cover" src="${product.img}" alt="${product.title}" />
         <div class="w-full">
           <div class="w-full">
             <h4 class="text-md font-medium truncate w-full whitespace-nowrap">${product.title}</h4>

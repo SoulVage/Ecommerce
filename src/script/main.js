@@ -6,6 +6,7 @@ import { userUi } from "../ui/userUi.js";
 window.addEventListener("DOMContentLoaded", async () => {
   const data = await loadProducts() || [];
   const userData = await checkLogin();
+  AOS.init();
   if (userData) {
       await userUi(userData);
   }
