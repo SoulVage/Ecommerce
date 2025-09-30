@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "img": "https://www.dellonline.co.za/cdn/shop/files/N003P5690EMEA_VP_720x.png?v=1717598377",
+    "title": "Dell Laptop",
+    "category": "Laptop",
+    "price": 1599.99,
+    "offPercentage": 0
+  },
+  {
+    "id": 2,
+    "img": "https://sa.revibe.me/cdn/shop/files/Graphite_f07dd61e-a48e-4b71-8570-6a36d3b393cd.png?v=1726048693",
+    "title": "Apple iPhone 13 Pro",
+    "category": "Mobile",
+    "price": 999.99,
+    "offPercentage": 10
+  },
+  {
+    "id": 3,
+    "img": "https://m.media-amazon.com/images/I/71dhExJEEWL.jpg",
+    "title": "Samsung Galaxy S22",
+    "category": "Mobile",
+    "price": 799.99,
+    "offPercentage": 15
+  },
+  {
+    "id": 4,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLxcQXu_jdWvEdblglTXwpLJ-_yhLDfnNBDQ&s",
+    "title": "Asus ROG Gaming Laptop",
+    "category": "Laptop",
+    "price": 1899.99,
+    "offPercentage": 5
+  },
+  {
+    "id": 5,
+    "img": "https://www.eldi.be/media/catalog/product/cache/58e43d70a64d0380283c92d496c52ad4/7/1/7190_1_2.jpg",
+    "title": "Samsung 55\" 4K Smart TV",
+    "category": "TV",
+    "price": 699.99,
+    "offPercentage": 18
+  },
+  {
+    "id": 6,
+    "img": "https://i5.walmartimages.com/seo/PNY-GeForce-RTX-4070-GPU-12GB-XLR8-Gaming-VERTO-EPIC-X-RGB-Triple-Fan-DLSS-3-Graphics-Card_b9868c62-2285-42c1-9398-63b962c541a6.e565daea43daff5166d094180e2ab61b.jpeg",
+    "title": "NVIDIA RTX 4070 Graphic Card",
+    "category": "Graphic Card",
+    "price": 699.99,
+    "offPercentage": 10
+  },
+  {
+    "id": 7,
+    "img": "https://m.media-amazon.com/images/I/51SkVQUYHrL.jpg",
+    "title": "AMD Radeon RX 7900 XT",
+    "category": "Graphic Card",
+    "price": 899.99,
+    "offPercentage": 12
+  },
+  {
+    "id": 8,
+    "img": "https://www.aviteh.hr/media/catalog/product/cache/d17cd82bef220a5289a6dd6d865f0999/0/1/01_1_1.jpg",
+    "title": "Canon EOS 250D Camera",
+    "category": "Camera",
+    "price": 599.99,
+    "offPercentage": 12
+  },
+  {
+    "id": 9,
+    "img": "https://m.media-amazon.com/images/I/71ARBeyX02L.jpg",
+    "title": "Sony WH-1000XM4 Headphone",
+    "category": "Headphone",
+    "price": 349.99,
+    "offPercentage": 20
+  },
+  {
+    "id": 10,
+    "img": "https://static.gigabyte.com/StaticFile/Image/Global/acb001b5080604b2ccc5107fec8c8305/Product/32836/png/300",
+    "title": "NVIDIA RTX 4080 Graphic Card",
+    "category": "Graphic Card",
+    "price": 1199.99,
+    "offPercentage": 8
+  },
+  {
+    "id": 11,
+    "img": "https://media.ldlc.com/r1600/ld/products/00/06/09/34/LD0006093434.jpg",
+    "title": "AMD Radeon RX 7800 XT",
+    "category": "Graphic Card",
+    "price": 849.99,
+    "offPercentage": 10
+  },
+  {
+    "id": 12,
+    "img": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRn2LSjtjukyOIu6IBFPdX0uVhbyP5AQ-q8Q0j-Pcl_cDWazS-FeBFpa0xnsS_oMHI-9iZk1b5EKA9cEw1zKUkZuYZREFOztoz_IZL_ahWc3wrTK3hmd1QniJStIM2R8yjHkbLEsg&usqp=CAc",
+    "title": "EVGA GeForce RTX 4070 Ti",
+    "category": "Graphic Card",
+    "price": 799.99,
+    "offPercentage": 12
+  },
+  {
+    "id": 13,
+    "img": "https://m.media-amazon.com/images/I/412PrQo+laL._SY780_.jpg",
+    "title": "NVIDIA RTX 4060 Ti Graphic Card",
+    "category": "Graphic Card",
+    "price": 599.99,
+    "offPercentage": 7
+  },
+  {
+    "id": 14,
+    "img": "https://dlcdnwebimgs.asus.com/gain/f69cfad3-af20-403e-ad93-1ffb91604d82/w800",
+    "title": "ASUS TUF Gaming Laptop",
+    "category": "Laptop",
+    "price": 1399.99,
+    "offPercentage": 5
+  },
+  {
+    "id": 15,
+    "img": "https://image.coolblue.nl/500x500/products/1454466",
+    "title": "HP Pavilion Gaming Laptop",
+    "category": "Laptop",
+    "price": 1299.99,
+    "offPercentage": 10
+  },
+  {
+    "id": 16,
+    "img": "https://p2-ofp.static.pub//fes/cms/2025/04/14/dmwa5bmukcg6gb3erzii12khrfho4p776428.png",
+    "title": "Lenovo Legion 5 Laptop",
+    "category": "Laptop",
+    "price": 1499.99,
+    "offPercentage": 7
+  }
+]

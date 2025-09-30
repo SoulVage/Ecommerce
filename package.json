@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "swiper": "^12.0.2",
+    "tailwindcss": "^4.1.13"
+  },
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

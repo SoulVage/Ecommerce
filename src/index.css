@@ -1,0 +1,54 @@
+.swiper {
+  max-width: 1000px !important;
+  height: 320px !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow-y: visible !important;
+  overflow-x: hidden !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 20 !important;
+  color: #000 !important;
+}
+
+.swiper-button-prev {
+  scale: 0.5 !important;
+  left: 0px !important;
+}
+
+.swiper-button-next {
+  scale: 0.5 !important;
+  right: 0px !important;
+}
+.swiper-pagination {
+  bottom: -30px !important;
+  color: red !important;
+  transition: all 0.3s !important;
+  -webkit-transition: all 0.3s !important;
+  -moz-transition: all 0.3s !important;
+  -ms-transition: all 0.3s !important;
+  -o-transition: all 0.3s !important;
+}
+.swiper-pagination-bullet {
+    transition: all 0.3s !important;
+    -webkit-transition: all 0.3s !important;
+    -moz-transition: all 0.3s !important;
+    -ms-transition: all 0.3s !important;
+    -o-transition: all 0.3s !important;
+}
+.swiper-pagination-bullet-active {
+    width: 30px !important;
+    border-radius: 50px !important;
+    background-color: #ffd230 !important;
+    -webkit-border-radius: 50px !important;
+    -moz-border-radius: 50px !important;
+    -ms-border-radius: 50px !important;
+    -o-border-radius: 50px !important;
+}
+.swiper-parent {
+    margin: 30px 0 60px 0;
+}

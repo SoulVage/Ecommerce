@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../output.css">
+</head>
+<body class="flex h-dvh items-center justify-center">
+      <form class="flex flex-col rounded-xl bg-white px-6 py-10" action="">
+        <h1 class="mb-9 text-2xl">Login</h1>
+        <label class="text-sm text-black/80" for="">Email:</label>
+          <input id="email" placeholder="email@example.com" class="placeholder:text-sm border-1 outline-none p-2 w-80 border-black/10 rounded-xl my-2" type="email">
+          <label class="text-sm text-black/80" for="">Password:</label>
+          <input id="password" placeholder="*********" class="placeholder:text-sm border-1 outline-none p-2 w-80 border-black/10 rounded-xl my-2"  type="password">
+          <p class="text-xs">Don't Have An Account? <a class="text-amber-400 underline" href="">Sign Up</a></p>
+          <span id="msg">
+          </span>
+          <button id="submit" class="outline-none p-2 w-80 bg-amber-300 rounded-xl my-4">Login</button>
+          <p class="text-sm text-black/70 text-center">or login with:</p>
+          <div>
+            <button class="flex w-full rounded-xl items-center gap-4 justify-center border-1 border-black/20 p-2 mt-6">
+              <img class="w-6 h-6" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/250px-Google_Favicon_2025.svg.png" alt="">
+              Google
+            </button>
+          </div>
+      </form>
+<script type="module" src="../__login_script/main.js"></script>
+</body>
+</html>
