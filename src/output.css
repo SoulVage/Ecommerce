@@ -207,6 +207,9 @@
   }
 }
 @layer utilities {
+  .visible {
+    visibility: visible;
+  }
   .absolute {
     position: absolute;
   }
@@ -230,6 +233,12 @@
   }
   .z-200 {
     z-index: 200;
+  }
+  .z-300 {
+    z-index: 300;
+  }
+  .z-\[300\] {
+    z-index: 300;
   }
   .mx-auto {
     margin-inline: auto;
@@ -308,6 +317,9 @@
   }
   .grid {
     display: grid;
+  }
+  .hidden {
+    display: none;
   }
   .table {
     display: table;
