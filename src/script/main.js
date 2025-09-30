@@ -2,16 +2,11 @@ import { loadProducts } from "./api.js";
 import { productsInit } from "./productsInit.js";
 import { checkLogin } from "../__login_script/checkLogin.js";
 import { userUi } from "../ui/userUi.js";
-const loader = document.createElement("div");
-loader.id = "loader";
-loader.className = "fixed w-full h-dvh bg-white z-[300] flex justify-center items-center";
-loader.innerHTML = `<div class="loader"></div>`;
-document.body.appendChild(loader);
 
 window.addEventListener("DOMContentLoaded", async () => {
   const data = (await loadProducts()) || [];
   const userData = await checkLogin();
-  !loader
+  document.getElementById("loader")?.remove();
   AOS.init();
   if (userData) {
     await userUi(userData);
