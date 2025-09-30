@@ -6,13 +6,13 @@ export async function emailCheck(email) {
         });
         if (!res.ok) {
             console.log("Failed to fetch users:", res.status);
-            return false; // اگر سرور خطا داد، اجازه نده ثبت‌نام ادامه پیدا کنه
+            return false; 
         }
 
         const data = await res.json();
         const filter = data.find(u => u.email.toLowerCase() === email.toLowerCase().trim());
 
-        return !filter; // اگر پیدا شد، false برگردون، یعنی ایمیل تکراریه
+        return !filter;
     } catch (err) {
         console.log(err);
         return false;
