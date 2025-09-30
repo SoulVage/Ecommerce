@@ -8,7 +8,7 @@ export function createProductCard(product) {
       if (product) {
         return `
     <a href="#" class="swiper-slide" data-aos="zoom-in-up" title="${product.title}">
-      <div class="w-full max-w-90 rounded-xl flex flex-col items-center justify-between p-4 gap-5 hover:bg-black/2">
+      <div class="w-full max-w-90 min-w-20 rounded-xl flex flex-col items-center justify-between p-3 sm:p-4 gap-5 hover:bg-black/2">
         <img loading="lazy" class="w-[160px] h-[160px] object-cover" src="${product.img}" alt="${product.title}" />
         <div class="w-full">
           <div class="w-full">
@@ -20,8 +20,12 @@ export function createProductCard(product) {
               ${discountHtml}
               <p>$${getDiscountedPrice(product)}</p>
             </div>
-            <button class="bg-amber-300 py-2 text-[12px] font-medium rounded-2xl px-4 transition duration-300 ease-in-out hover:bg-amber-400">
-              Add to Cart
+            <button class="bg-amber-300 py-2 text-[12px] font-medium rounded-2xl px-2 sm:px-4 transition duration-300 ease-in-out hover:bg-amber-400">
+            <p class="hidden sm:block">Add to Cart</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 sm:hidden">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+</svg>
+
             </button>
           </div>
         </div>
