@@ -9,6 +9,24 @@
     margin-top: 1rem;
     max-height: 800px !important;
 }
+.dropdown-content .search-wrapper {
+    opacity: 0 !important;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+.dropdown-content.active .search-wrapper {
+    opacity: 1 !important;
+}
+.dropdown-items {
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
 input[type="checkbox"] {
     accent-color: #000 !important;
 }
