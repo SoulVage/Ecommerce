@@ -1,0 +1,14 @@
+.dropdown-content {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+.dropdown-content.active {
+    margin-top: 1rem;
+    max-height: 800px !important;
+}
+input[type="checkbox"] {
+    accent-color: #000 !important;
+}

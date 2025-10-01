@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body class="flex flex-col h-dvh items-center ">
+    <nav
+    data-aos="fade-down"
+    data-aos-delay="500"
+    class="nav px-4 lg:px-0 fixed flex items-center justify-between w-full py-6 self-center max-w-6xl text-black bg-white/95 z-200"
+  >
+    <h3>Ecommerce</h3>
+    <div class="flex items-center">
+      <ul class="hidden md:flex items-center gap-10">
+        <li>
+          <a
+            class="border-b-2 py-2 transition-all duration-300  ease-in-out   border-black"
+            href=""
+            >Store</a
+          >
+        </li>
+        <li>
+          <a
+            class="border-b-2 py-2 transition-all duration-300 ease-in-out border-black/0 hover:text-black hover:border-black"
+            href=""
+            >Support</a
+          >
+        </li>
+        <li>
+          <a
+            class="border-b-2 py-2 transition-all duration-300 ease-in-out border-black/0 hover:text-black hover:border-black"
+            href=""
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            class="border-b-2 py-2 transition-all duration-300 ease-in-out border-black/0 hover:text-black hover:border-black"
+            href=""
+            >Categories</a
+          >
+        </li>
+      </ul>
+      <button class="ml-10 bg-gray-100 p-2 rounded-full text-black">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>          
+      </button>
+      <button class="ml-5 bg-gray-100 p-2 rounded-full text-black">
+        <svg
+          class="w-5"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+          />
+        </svg>
+      </button>
+      
+      <div id="login-ui" class="ml-5 md:ml-15">
+        <a
+          href="login/"
+          class="flex items-center cursor-pointer gap-2 rounded-lg"
+        >
+          <svg
+            class="w-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>  
+  <div class="flex mt-40 gap-4 w-full max-w-6xl">
+    <a class="text-black/50" href="">Home</a>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black/50 w-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+      <a class="text-black/50" href="">Products</a>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-black/50 w-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+      <a href="">Smartphones</a>      
+  </div>
+  <section class="max-w-6xl w-full">
+    <aside class="">
+        <div class="w-60">
+            <div class="dropdown flex border-b-1 border-black/50 py-4 justify-between item-center">
+                <h3 class="text-lg">Brand</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="transition duration-200 ease-in-out w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                              
+            </div>
+            <div class="active dropdown-content max-h-[0] w-fit overflow-hidden transition duration-300 ease-in-out space-y-2">
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="apple" id="apple">
+                  <label class="text-sm" for="apple">Apple</label>
+                  <p class="text-xs text-black/60">12</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="samsung" id="samsung">
+                  <label class="text-sm" for="samsung">Samsung</label>
+                  <p class="text-xs text-black/60">8</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="sony" id="sony">
+                  <label class="text-sm" for="sony">Sony</label>
+                  <p class="text-xs text-black/60">15</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="xiaomi" id="xiaomi">
+                  <label class="text-sm" for="xiaomi">Xiaomi</label>
+                  <p class="text-xs text-black/60">20</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="lg" id="lg">
+                  <label class="text-sm" for="lg">LG</label>
+                  <p class="text-xs text-black/60">5</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="huawei" id="huawei">
+                  <label class="text-sm" for="huawei">Huawei</label>
+                  <p class="text-xs text-black/60">9</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="asus" id="asus">
+                  <label class="text-sm" for="asus">Asus</label>
+                  <p class="text-xs text-black/60">7</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="dell" id="dell">
+                  <label class="text-sm" for="dell">Dell</label>
+                  <p class="text-xs text-black/60">11</p>
+                </div>
+              </div>
+        </div>
+        <div class="w-60">
+            <div class="dropdown flex border-b-1 border-black/50 py-4 justify-between item-center">
+                <h3 class="text-lg">Brand</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="transition duration-200 ease-in-out w-5 rotate-180">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                              
+            </div>
+            <div class="dropdown-content max-h-[0] w-fit overflow-hidden transition duration-300 ease-in-out space-y-2">
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="apple" id="apple">
+                  <label class="text-sm" for="apple">Apple</label>
+                  <p class="text-xs text-black/60">12</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="samsung" id="samsung">
+                  <label class="text-sm" for="samsung">Samsung</label>
+                  <p class="text-xs text-black/60">8</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="sony" id="sony">
+                  <label class="text-sm" for="sony">Sony</label>
+                  <p class="text-xs text-black/60">15</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="xiaomi" id="xiaomi">
+                  <label class="text-sm" for="xiaomi">Xiaomi</label>
+                  <p class="text-xs text-black/60">20</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="lg" id="lg">
+                  <label class="text-sm" for="lg">LG</label>
+                  <p class="text-xs text-black/60">5</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="huawei" id="huawei">
+                  <label class="text-sm" for="huawei">Huawei</label>
+                  <p class="text-xs text-black/60">9</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="asus" id="asus">
+                  <label class="text-sm" for="asus">Asus</label>
+                  <p class="text-xs text-black/60">7</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="dell" id="dell">
+                  <label class="text-sm" for="dell">Dell</label>
+                  <p class="text-xs text-black/60">11</p>
+                </div>
+              </div>
+        </div>
+        <div class="w-60">
+            <div class="dropdown flex border-b-1 border-black/50 py-4 justify-between item-center">
+                <h3 class="text-lg">Brand</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="transition duration-200 ease-in-out w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                              
+            </div>
+            <div class="dropdown-content max-h-[0] w-fit overflow-hidden transition duration-300 ease-in-out space-y-2">
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="apple" id="apple">
+                  <label class="text-sm" for="apple">Apple</label>
+                  <p class="text-xs text-black/60">12</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="samsung" id="samsung">
+                  <label class="text-sm" for="samsung">Samsung</label>
+                  <p class="text-xs text-black/60">8</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="sony" id="sony">
+                  <label class="text-sm" for="sony">Sony</label>
+                  <p class="text-xs text-black/60">15</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="xiaomi" id="xiaomi">
+                  <label class="text-sm" for="xiaomi">Xiaomi</label>
+                  <p class="text-xs text-black/60">20</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="lg" id="lg">
+                  <label class="text-sm" for="lg">LG</label>
+                  <p class="text-xs text-black/60">5</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="huawei" id="huawei">
+                  <label class="text-sm" for="huawei">Huawei</label>
+                  <p class="text-xs text-black/60">9</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="asus" id="asus">
+                  <label class="text-sm" for="asus">Asus</label>
+                  <p class="text-xs text-black/60">7</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="dell" id="dell">
+                  <label class="text-sm" for="dell">Dell</label>
+                  <p class="text-xs text-black/60">11</p>
+                </div>
+              </div>
+        </div>
+        <div class="w-60">
+            <div class="dropdown flex border-b-1 border-black/50 py-4 justify-between item-center">
+                <h3 class="text-lg">Brand</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="transition duration-200 ease-in-out w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                              
+            </div>
+            <div class="dropdown-content max-h-[0] w-fit overflow-hidden transition duration-300 ease-in-out space-y-2">
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="apple" id="apple">
+                  <label class="text-sm" for="apple">Apple</label>
+                  <p class="text-xs text-black/60">12</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="samsung" id="samsung">
+                  <label class="text-sm" for="samsung">Samsung</label>
+                  <p class="text-xs text-black/60">8</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="sony" id="sony">
+                  <label class="text-sm" for="sony">Sony</label>
+                  <p class="text-xs text-black/60">15</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="xiaomi" id="xiaomi">
+                  <label class="text-sm" for="xiaomi">Xiaomi</label>
+                  <p class="text-xs text-black/60">20</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="lg" id="lg">
+                  <label class="text-sm" for="lg">LG</label>
+                  <p class="text-xs text-black/60">5</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="huawei" id="huawei">
+                  <label class="text-sm" for="huawei">Huawei</label>
+                  <p class="text-xs text-black/60">9</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="asus" id="asus">
+                  <label class="text-sm" for="asus">Asus</label>
+                  <p class="text-xs text-black/60">7</p>
+                </div>
+              
+                <div class="p-1 flex items-center gap-1">
+                  <input type="checkbox" name="dell" id="dell">
+                  <label class="text-sm" for="dell">Dell</label>
+                  <p class="text-xs text-black/60">11</p>
+                </div>
+              </div>
+        </div>
+    </aside>
+  </section>
+  <script src="script/dropdown.js"></script>
+</body>
+</html>

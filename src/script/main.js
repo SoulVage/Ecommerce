@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   if (userData) {
     await userUi(userData);
   }
-  productsInit("product-segment", data, "", 13, {});
+  productsInit("product-segment", data, "", 10, {});
   productsInit("swiper-1", data, "", 6, {
     name: ".mySwiper1",
     page: ".swiper-pagination1",
