@@ -20,5 +20,5 @@ dropdown.forEach((drop) => {
                 item.classList.add("opacity-30");
             }            
         })
-    })  
+    })
 })

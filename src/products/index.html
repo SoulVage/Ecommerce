@@ -170,9 +170,93 @@
                 </div>
               </div>
         </div>
-
+        <div class="w-60">
+            <div class="dropdown flex border-b-1 border-black/50 py-4 justify-between item-center">
+                <h3 class="text-lg">Price Range</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="transition rotate-180 duration-200 ease-in-out w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                              
+            </div>
+            <div class="w-full dropdown-content max-h-[0] overflow-hidden transition duration-300 ease-in-out space-y-2">
+                <div class="dual-range relative w-80 h-6">
+                    <div class="slider-track absolute w-full h-1 bg-gray-300 rounded top-1/2 -translate-y-1/2"></div>
+                    <input type="range" min="0" max="1500" value="0" id="slider-1" class="absolute w-full h-6 top-0 bg-transparent">
+                    <input type="range" min="0" max="1500" value="1500" id="slider-2" class="absolute w-full h-6 top-0 bg-transparent">
+                  </div>
+                  <div class="flex w-full justify-between">
+                    <p class="text-black/40 text-xs">From: <span class="text-black/80 text-sm" id="range1">0</span></p>
+                    <p class="text-black/40 text-xs">To: <span class="text-black/80 text-sm" id="range2">0</span></p>
+                  </div>
+            </div>
+        </div>
+        <div class="w-60">
+            <div class="dropdown flex border-b-1 border-black/50 py-4 justify-between item-center">
+                <h3 class="text-lg">Built-in-memory</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="transition duration-200 ease-in-out w-5 rotate-180">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                              
+            </div>
+            <div class="w-full dropdown-content max-h-[0] overflow-hidden transition duration-300 ease-in-out space-y-2">
+                <div class="search-wrapper flex py-2 px-3 rounded-xl  gap-2 bg-gray-100 w-full items-center justify-between">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                      </svg>                      
+                    <input placeholder="Search..." class="search-input outline-none w-full placeholder:text-sm">
+                </div>
+                <div class="dropdown-items p-1 flex items-center gap-1">
+                  <input type="checkbox" name="apple" id="apple">
+                  <label class="text-sm" for="apple">Apple</label>
+                  <p class="text-xs text-black/60">12</p>
+                </div>
+              
+                <div class="dropdown-items p-1 flex items-center gap-1">
+                  <input type="checkbox" name="samsung" id="samsung">
+                  <label class="text-sm" for="samsung">Samsung</label>
+                  <p class="text-xs text-black/60">8</p>
+                </div>
+              
+                <div class="dropdown-items p-1 flex items-center gap-1">
+                  <input type="checkbox" name="sony" id="sony">
+                  <label class="text-sm" for="sony">Sony</label>
+                  <p class="text-xs text-black/60">15</p>
+                </div>
+              
+                <div class="dropdown-items p-1 flex items-center gap-1">
+                  <input type="checkbox" name="xiaomi" id="xiaomi">
+                  <label class="text-sm" for="xiaomi">Xiaomi</label>
+                  <p class="text-xs text-black/60">20</p>
+                </div>
+              
+                <div class="dropdown-items p-1 flex items-center gap-1">
+                  <input type="checkbox" name="lg" id="lg">
+                  <label class="text-sm" for="lg">LG</label>
+                  <p class="text-xs text-black/60">5</p>
+                </div>
+              
+                <div class="dropdown-items p-1 flex items-center gap-1">
+                  <input type="checkbox" name="huawei" id="huawei">
+                  <label class="text-sm" for="huawei">Huawei</label>
+                  <p class="text-xs text-black/60">9</p>
+                </div>
+              
+                <div class="dropdown-items p-1 flex items-center gap-1">
+                  <input type="checkbox" name="asus" id="asus">
+                  <label class="text-sm" for="asus">Asus</label>
+                  <p class="text-xs text-black/60">7</p>
+                </div>
+              
+                <div class="dropdown-items p-1 flex items-center gap-1">
+                  <input type="checkbox" name="dell" id="dell">
+                  <label class="te xt-sm" for="dell">Dell</label>
+                  <p class="text-xs text-black/60">11</p>
+                </div>
+              </div>
+        </div>
     </aside>
   </section>
+  <script src="script/dualRange.js"></script>
   <script src="script/dropdown.js"></script>
 </body>
 </html>
