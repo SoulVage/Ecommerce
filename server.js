@@ -1,10 +1,15 @@
-const express = require('express');
-const fs = require('fs').promises;
-const path = require('path');
-const jwt = require('jsonwebtoken');
-const cookieParser = require('cookie-parser');
-const rateLimit = require('express-rate-limit');
-const helmet = require('helmet');
+import express from 'express';
+import fs from 'fs/promises';
+import path from 'path';
+import jwt from 'jsonwebtoken';
+import cookieParser from 'cookie-parser';
+import rateLimit from 'express-rate-limit';
+import helmet from 'helmet';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 
@@ -48,7 +53,12 @@ function invalidCredentials(res) {
   return res.status(401).json({ message: 'Invalid credentials' });
 }
 
-// helper: ساخت id یکتا با dynamic import
+// helper: ساخت id یکتا
+import('uuid').then(module => { 
+  var uuidv4 = module.v4; 
+});
+
+// یا به صورت async function
 async function generateId() {
   const { v4: uuidv4 } = await import('uuid');
   return uuidv4();
