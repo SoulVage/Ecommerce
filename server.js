@@ -5,7 +5,6 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
-const { v4: uuidv4 } = require('uuid'); // برای ساختن id یکتا
 
 const app = express();
 
@@ -49,6 +48,12 @@ function invalidCredentials(res) {
   return res.status(401).json({ message: 'Invalid credentials' });
 }
 
+// helper: ساخت id یکتا
+async function generateId() {
+  const { v4: uuidv4 } = await import('uuid');
+  return uuidv4();
+}
+
 // ========== API ها ==========
 
 // POST /api/register
@@ -68,7 +73,7 @@ app.post('/api/register', async (req, res) => {
     }
 
     const newUser = {
-      id: uuidv4(),
+      id: await generateId(),
       email: email.toLowerCase(),
       username,
       password, // ⚠️ در حالت واقعی باید هش بشه
