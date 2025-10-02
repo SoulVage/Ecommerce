@@ -33,7 +33,7 @@ async function readUsers() {
     const raw = await fs.readFile(USERS_FILE, 'utf8');
     return JSON.parse(raw);
   } catch (err) {
-    if (err.code === 'ENOENT') return []; // اگر فایل وجود نداشت
+    if (err.code === 'ENOENT') return [];
     throw err;
   }
 }
@@ -48,7 +48,7 @@ function invalidCredentials(res) {
   return res.status(401).json({ message: 'Invalid credentials' });
 }
 
-// helper: ساخت id یکتا
+// helper: ساخت id یکتا با dynamic import
 async function generateId() {
   const { v4: uuidv4 } = await import('uuid');
   return uuidv4();
@@ -68,9 +68,7 @@ app.post('/api/register', async (req, res) => {
     const existing = users.find(
       u => String(u.email).toLowerCase() === String(email).toLowerCase()
     );
-    if (existing) {
-      return res.status(400).json({ message: 'User already exists' });
-    }
+    if (existing) return res.status(400).json({ message: 'User already exists' });
 
     const newUser = {
       id: await generateId(),
@@ -94,7 +92,7 @@ app.post('/api/register', async (req, res) => {
   }
 });
 
-// GET /api/users (لیست همه کاربرها بدون پسورد)
+// GET /api/users
 app.get('/api/users', async (req, res) => {
   try {
     const users = await readUsers();
@@ -122,8 +120,7 @@ app.post('/api/login', authLimiter, async (req, res) => {
     const users = await readUsers();
     const user = users.find(u => String(u.email || '').toLowerCase() === email);
 
-    if (!user) return invalidCredentials(res);
-    if (user.password !== password) return invalidCredentials(res);
+    if (!user || user.password !== password) return invalidCredentials(res);
 
     const payload = { sub: user.id, email: user.email };
     const token = jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
