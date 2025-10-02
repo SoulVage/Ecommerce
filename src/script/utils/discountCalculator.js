@@ -3,4 +3,3 @@ export function getDiscountedPrice(product) {
       ? (product.price - (product.price * product.offPercentage) / 100).toFixed(2)
       : product.price;
   }
-  
