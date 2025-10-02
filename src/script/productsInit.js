@@ -1,7 +1,7 @@
 import { getRandomProducts } from "./utils/randomProduct.js";
 import { createProductCard } from "./productCard.js";
 
-export function productsInit(wrapperId, data, filter,count, swiperConfig) {
+export function productsInit(wrapperId, data, filter, count, swiperConfig) {
   const productWrapper = document.getElementById(wrapperId);
   const products = filter
     ? data.filter((p) => p.category === filter).slice(0, count)
@@ -12,7 +12,7 @@ export function productsInit(wrapperId, data, filter,count, swiperConfig) {
       } else {
         productWrapper.innerHTML = "Failed To Load Products";
       }
-      
+    if (!swiperConfig.name) return;
   new Swiper(swiperConfig.name, {
     loop: true,
     slidesPerView: 4,
